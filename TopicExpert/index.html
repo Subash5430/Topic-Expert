@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy | Learn Together</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Basic styles for the navigation bar */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f7f2f2;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    /* Hamburger menu styles */
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+      color: #333;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        padding: 15px;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        color:black;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>📘 StudyBuddy</h1>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="about.html">About</a>
+        <a href="signin.php">Sign In</a>
+        <a href="register.php">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h2>Don't Struggle Alone. <br> Learn with a Friend!</h2>
+        <p>Search for students who know your topic, and book a session with them. It's easy, free, and effective!</p>
+        <a href="#" class="btn-primary">Get Started</a>
+      </div>
+      <div class="hero-img">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Study Illustration" />
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2>Why StudyBuddy?</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>🔍 Find a Peer</h3>
+        <p>Search for students who are skilled in your topic of interest.</p>
+      </div>
+      <div class="card">
+        <h3>📅 Book a Slot</h3>
+        <p>Schedule one-on-one sessions with your preferred peer tutor.</p>
+      </div>
+      <div class="card">
+        <h3>🎓 Learn & Grow</h3>
+        <p>Get concepts cleared, improve grades, and grow together.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 StudyBuddy. Made with ❤️ by students, for students.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
