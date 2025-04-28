@@ -10,45 +10,78 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f0f4ff;
+      background: linear-gradient(to right, #e0e7ff, #f0f4ff);
       color: #1e293b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
-      background-color: #1e3a8a;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
       padding: 20px 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-    header h1 { font-size: 28px; }
+    header h1 {
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
+      margin-left: 25px;
       font-weight: 500;
+      transition: color 0.3s;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover {
+      color: #d1d5db;
+      text-decoration: underline;
+    }
     .content {
       padding: 80px 20px;
       max-width: 900px;
       margin: 0 auto;
+      flex: 1;
+      animation: fadeIn 1s ease-in;
     }
     .content h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
+      font-size: 36px;
+      margin-bottom: 25px;
+      color: #1e3a8a;
+      text-align: center;
+      position: relative;
+    }
+    .content h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #3b82f6;
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
     .content p {
       font-size: 18px;
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      text-align: justify;
+      color: #374151;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background: #1e3a8a;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
       color: white;
       font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -66,13 +99,13 @@
 
   <div class="content">
     <h2>About StudyBuddy</h2>
-    <p>StudyBuddy is a platform designed to help students learn collaboratively by connecting those who need help with topics to peers who understand them well.</p>
+    <p>StudyBuddy is a dynamic platform designed to empower students through collaborative learning. We bridge the gap between those seeking help and those willing to share their knowledge.</p>
     
-    <p>The idea is simple — if Student A is struggling with a subject and Student B has mastered it, why not let them connect? Our platform allows Student A to book a slot with Student B and get one-on-one help in understanding the concept.</p>
+    <p>Imagine Student A struggling with a topic and Student B having already mastered it — StudyBuddy makes it simple for them to connect! Book a one-on-one session and turn confusion into clarity.</p>
     
-    <p>Whether you're stuck on a tough assignment or preparing for an upcoming exam, StudyBuddy can help you find someone to guide you. It’s all about peer learning and mutual growth!</p>
+    <p>Whether you're tackling a tough assignment, preparing for finals, or just need a fresh perspective, StudyBuddy helps you find the perfect peer guide. Learning together has never been easier or more effective!</p>
     
-    <p>We believe every student has something to offer — so if you're good at a subject, you can also share your knowledge and help others while reinforcing your own skills.</p>
+    <p>And it's not just about receiving help — if you excel in a subject, you can give back by guiding others. Teaching reinforces your own knowledge too. Together, we grow stronger!</p>
   </div>
 
   <footer>

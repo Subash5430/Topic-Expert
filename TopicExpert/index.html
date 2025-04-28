@@ -4,12 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>StudyBuddy | Learn Together</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Basic styles for the navigation bar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4ff;
+      color: #1e293b;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
     nav {
       display: flex;
-      justify-content: flex-end;
       gap: 20px;
     }
 
@@ -17,19 +41,131 @@
       text-decoration: none;
       color: #f7f2f2;
       font-size: 16px;
-      padding: 10px;
+      padding: 8px 12px;
+      transition: background 0.3s, color 0.3s;
     }
 
-    /* Hamburger menu styles */
+    nav a:hover {
+      background: #ffffff33;
+      border-radius: 8px;
+    }
+
     .menu-icon {
       display: none;
       cursor: pointer;
       font-size: 28px;
-      color: #333;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #93c5fd, #e0e7ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #334155;
+    }
+
+    .btn-primary {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #3b82f6;
+    }
+
+    .hero-img img {
+      width: 250px;
+      margin-top: 20px;
+    }
+
+    .features {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #1e3a8a;
+    }
+
+    .feature-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      width: 280px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #1e3a8a;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #475569;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e3a8a;
+      color: white;
+      font-size: 14px;
+      margin-top: 50px;
     }
 
     /* Responsive styles */
     @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .menu-icon {
         display: block;
       }
@@ -38,27 +174,41 @@
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #fff;
-        width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        top: 70px;
+        right: 20px;
+        background-color: white;
+        width: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       }
 
       nav a {
+        color: #1e3a8a;
         padding: 15px;
-        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #eee;
         text-align: center;
-        color:black;
       }
 
       nav.active {
         display: flex;
       }
-    }
 
+      .hero {
+        padding: 50px 20px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      .features h2 {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -77,8 +227,8 @@
   <section class="hero">
     <div class="container">
       <div class="hero-text">
-        <h2>Don't Struggle Alone. <br> Learn with a Friend!</h2>
-        <p>Search for students who know your topic, and book a session with them. It's easy, free, and effective!</p>
+        <h2>Don't Struggle Alone.<br> Learn with a Friend!</h2>
+        <p>Find peers who understand your topics, and grow together through collaborative learning!</p>
         <a href="#" class="btn-primary">Get Started</a>
       </div>
       <div class="hero-img">
@@ -88,19 +238,19 @@
   </section>
 
   <section class="features" id="features">
-    <h2>Why StudyBuddy?</h2>
+    <h2>Why Choose StudyBuddy?</h2>
     <div class="feature-cards">
       <div class="card">
         <h3>🔍 Find a Peer</h3>
-        <p>Search for students who are skilled in your topic of interest.</p>
+        <p>Search for students skilled in the topics you're struggling with.</p>
       </div>
       <div class="card">
         <h3>📅 Book a Slot</h3>
-        <p>Schedule one-on-one sessions with your preferred peer tutor.</p>
+        <p>Schedule 1-on-1 sessions easily with available student tutors.</p>
       </div>
       <div class="card">
         <h3>🎓 Learn & Grow</h3>
-        <p>Get concepts cleared, improve grades, and grow together.</p>
+        <p>Get help, clear doubts, boost your grades, and empower each other.</p>
       </div>
     </div>
   </section>
